@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weihnachtszauber</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            background-image: url('background.png'); /* Ersetzen Sie 'your_image_path.jpg' mit dem Pfad zu Ihrem Bild */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #adventCalendar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 Spalten für 24 Tage */
+            gap: 10px;
+            max-width: 600px;
+        }
+
+        .calendar-day {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <h1>Merry Christmas</h1>
+        <div id="adventCalendar"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const adventCalendar = document.getElementById('adventCalendar');
+
+            for (let i = 1; i <= 24; i++) {
+                let day = document.createElement('div');
+                day.className = 'calendar-day';
+                day.textContent = i;
+                day.addEventListener('click', function() {
+                    alert('Türchen ' + i + ' geöffnet!');
+                    // Hier können Sie weitere Funktionen hinzufügen, z.B. das Anzeigen eines Bildes oder Textes
+                });
+                adventCalendar.appendChild(day);
+            }
+        });
+    </script>
+</body>
+</html>
